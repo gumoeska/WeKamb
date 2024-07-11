@@ -3,11 +3,13 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import Home from './pages/Home'
 import { ThemeProvider } from './components/theme/theme-provider'
+import { Analytics } from "@vercel/analytics/react"
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <Home />
+      <Analytics/>
     </ThemeProvider>
   </React.StrictMode>,
 )
