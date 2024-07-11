@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Column from "../Column";
-import { Button } from "../ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "../ui/dialog";
 import { IoIosAdd } from "react-icons/io";
 import ColumnDialog from "../ColumnDialog";

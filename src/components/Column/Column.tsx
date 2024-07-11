@@ -67,7 +67,7 @@ const Column = ({ title, headingColor, column, cards, setCards, setColumns }: Co
 
         setActive(false);
 
-        const indicators = getIndicators();
+        const indicators: HTMLElement[] = getIndicators();
         const { element } = getNearestIndicator(e, indicators);
 
         const before = element?.dataset.before || "-1";
@@ -95,7 +95,7 @@ const Column = ({ title, headingColor, column, cards, setCards, setColumns }: Co
         }
     };
 
-    const getIndicators = () => {
+    const getIndicators = (): HTMLElement[] => {
         return Array.from(document.querySelectorAll(`[data-column="${column}"]`));
     };
 
