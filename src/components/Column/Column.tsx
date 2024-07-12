@@ -107,8 +107,8 @@ const Column = ({ title, headingColor, column, cards, setCards, setColumns }: Co
     }
 
     return (
-        <div className="grid grid-rows-2">
-            <Card onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDragEnd} className={`bg-black p-4 w-full transition-colors ${active ? "bg-zinc-800/10" : "bg-zinc-800/0"}`}>
+        <div className="grid grid-rows py-5">
+            <Card onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDragEnd} className={`bg-black p-4 transition-colors ${active ? "bg-zinc-800/10" : "bg-zinc-800/0"}`}>
                 <div className="w-56">
                     <CardHeader className="p-0 border-b">
                         <div className="mb-3 flex items-center justify-between">
@@ -120,7 +120,7 @@ const Column = ({ title, headingColor, column, cards, setCards, setColumns }: Co
                             </span>
                         </div>
                     </CardHeader>
-                    <CardContent className="p-0 py-5">
+                    <CardContent className="p-0 pt-5">
                         <div>
                             {filteredCards.map((x) => {
                                 return <CardComp key={x.id} {...x} handleDragStart={handleDragStart} />
@@ -130,7 +130,7 @@ const Column = ({ title, headingColor, column, cards, setCards, setColumns }: Co
                     </CardContent>
                 </div>
             </Card>
-            <div className="flex flex-col py-3">
+            <div className="flex flex-col pt-3">
                 <Button variant={'outline'} className="bg-black hover:bg-red-500/60" onClick={() => removeColumn(column)}>
                     <MdDelete size={20} />
                 </Button>

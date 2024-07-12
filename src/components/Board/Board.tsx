@@ -25,12 +25,12 @@ const Board = () => {
     }, []);
 
     return (
-        <div className="pt-32 min-w-max bg-black">
+        <div className="lg:min-w-max bg-black">
             <Dialog>
-                <DialogTrigger className="fixed p-5 m-5 bottom-28 right-16 z-50 rounded-full size-18 border-0 animate-bounce hover:animate-spin bg-zinc-950">
+                <DialogTrigger className="fixed p-5 m-5 bottom-2 right-2 lg:bottom-28 lg:right-16 z-50 rounded-full size-18 border-0 animate-bounce hover:animate-spin bg-zinc-950">
                     <IoIosAdd size={20} />
                 </DialogTrigger>
-                <DialogContent>
+                <DialogContent className="size-max">
                     <DialogHeader>
                         <DialogTitle>Criar uma Coluna</DialogTitle>
                         <DialogDescription>
@@ -41,7 +41,7 @@ const Board = () => {
                 </DialogContent>
             </Dialog>
 
-            <div className="flex flex-row gap-8 overflow-scroll">
+            <div className="flex flex-row gap-8">
                 {columns.length > 0 ? (columns.map((e: any) => {
                     return (
                         <Column

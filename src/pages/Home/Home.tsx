@@ -4,18 +4,19 @@ import Header from "../../components/Header";
 
 const HomePage = () => {
     return (
-        <main className='flex flex-col min-h-screen bg-black justify-between min-w-max'>
-            <div className="fixed top-0 left-0 w-full z-50 bg-black">
+        <main>
+            <div className="fixed top-0 w-screen bg-black">
                 <Header />
             </div>
 
-            <div className="max-w-7xl mx-auto p-16 mt-4">
-                <section className="flex flex-col items-center justify-center">
+            <div className="mx-auto my-24">
+                <section className="flex flex-col items-center overflow-scroll overflow-y-hidden">
                     <Board />
                 </section>
             </div>
-            <div className="fixed bottom-0 left-0 w-full z-50 bg-black">
-                <div className="mx-auto bg-black">
+
+            <div className="flex flex-col items-center justify-center">
+                <div className="fixed bottom-0 w-screen bg-black">
                     <Footer />
                 </div>
             </div>
