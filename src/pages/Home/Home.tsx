@@ -10,7 +10,7 @@ const HomePage = () => {
             </div>
 
             <div className="mx-auto my-24">
-                <section className="flex flex-col items-center overflow-scroll overflow-y-hidden">
+                <section className="flex flex-col px-4 lg:items-center lg:px-0 overflow-scroll overflow-y-hidden">
                     <Board />
                 </section>
             </div>

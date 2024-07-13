@@ -37,15 +37,16 @@ const Column = ({ title, headingColor, column, cards, setCards, setColumns }: Co
     };
 
     const getNearestIndicator = (
-        e: React.DragEvent<HTMLDivElement>,
+        e: React.DragEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>,
         indicators: HTMLElement[]
     ): IndexSet => {
         const DISTANCE_OFFSET = 50;
+        const clientY = getClientY(e);
 
         const el = indicators.reduce(
             (closest: IndexSet, child: HTMLElement) => {
                 const box = child.getBoundingClientRect();
-                const offset = e.clientY - (box.top + DISTANCE_OFFSET);
+                const offset = clientY - (box.top + DISTANCE_OFFSET);
 
                 if (offset < 0 && offset > closest.offset) {
                     return { offset, element: child };
@@ -99,6 +100,13 @@ const Column = ({ title, headingColor, column, cards, setCards, setColumns }: Co
         return Array.from(document.querySelectorAll(`[data-column="${column}"]`));
     };
 
+    const getClientY = (e: React.DragEvent<HTMLDivElement> | React.TouchEvent<HTMLDivElement>): number => {
+        if ('touches' in e) {
+            return e.touches[0].clientY;
+        }
+        return e.clientY;
+    };
+
     const filteredCards = cards.filter((x) => x.column === column);
 
     const removeColumn = (columnToRemove: string) => {
@@ -108,7 +116,10 @@ const Column = ({ title, headingColor, column, cards, setCards, setColumns }: Co
 
     return (
         <div className="grid grid-rows py-5">
-            <Card onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDragEnd} className={`bg-black p-4 transition-colors ${active ? "bg-zinc-800/10" : "bg-zinc-800/0"}`}>
+            <Card onDragOver={handleDragOver}
+                onDragLeave={handleDragLeave}
+                onDrop={handleDragEnd}
+                className={`bg-black p-4 transition-colors ${active ? "bg-zinc-800/10" : "bg-zinc-800/0"}`}>
                 <div className="w-56">
                     <CardHeader className="p-0 border-b">
                         <div className="mb-3 flex items-center justify-between">
@@ -122,8 +133,11 @@ const Column = ({ title, headingColor, column, cards, setCards, setColumns }: Co
                     </CardHeader>
                     <CardContent className="p-0 pt-5">
                         <div>
-                            {filteredCards.map((x) => {
-                                return <CardComp key={x.id} {...x} handleDragStart={handleDragStart} />
+                            {filteredCards.map((card, index) => {
+                                return <CardComp key={card.id} {...card}
+                                    handleDragStart={handleDragStart}
+                                    data-before={index === 0 ? "-1" : cards[index - 1].id}
+                                    data-card-id={card.id} />
                             })}
                             <AddCard column={column} setCards={setCards} />
                         </div>
