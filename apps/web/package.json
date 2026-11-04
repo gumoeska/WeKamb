@@ -1,0 +1,21 @@
+{
+    "name": "@wekamb/web",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite --config vite.config.ts",
+        "build": "vite build --config vite.config.ts",
+        "preview": "vite preview --config vite.config.ts",
+        "typecheck": "tsc --noEmit -p tsconfig.json",
+        "test": "node --import tsx --test src/platform/board-storage.test.ts"
+    },
+    "dependencies": {
+        "@wekamb/app-core": "*",
+        "@wekamb/bridge-contract": "*",
+        "@wekamb/shared-domain": "*",
+        "@vercel/analytics": "^1.6.1",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1"
+    }
+}

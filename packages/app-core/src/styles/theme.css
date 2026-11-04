@@ -1,0 +1,36 @@
+:root {
+    --surface-page: #080808;
+    --surface-panel: #101010;
+    --surface-card: #191919;
+    --surface-hover: #242424;
+    --surface-raised: #2b2b2b;
+    --text-primary: #fafafa;
+    --text-secondary: #d4d4d4;
+    --text-muted: #a3a3a3;
+    --text-on-accent: #080808;
+    --color-accent: #ffffff;
+    --color-accent-hover: #e5e5e5;
+    --border-subtle: #303030;
+    --border-strong: #666666;
+    --grid-line: #ffffff06;
+    --background: 0 0% 3%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 3%;
+    --secondary: 0 0% 17%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 17%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 0 0% 14%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 0% 100%;
+    --destructive-foreground: 0 0% 3%;
+    --border: 0 0% 30%;
+    --input: 0 0% 40%;
+    --ring: 0 0% 100%;
+    --radius: 2px;
+}

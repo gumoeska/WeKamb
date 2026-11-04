@@ -1,0 +1,74 @@
+@import "@fontsource/rajdhani/latin-600.css";
+@import "@fontsource/rajdhani/latin-700.css";
+@import "@fontsource-variable/plus-jakarta-sans/wght.css";
+@import "./tokens.css";
+@import "./theme.css";
+@import "./layout.css";
+@import "./kanban.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    html {
+        color-scheme: dark;
+    }
+
+    body {
+        margin: 0;
+        min-width: 280px;
+        background: var(--surface-page);
+        color: var(--text-primary);
+        font-family: var(--font-body);
+        font-size: var(--text-body-size);
+        -webkit-font-smoothing: antialiased;
+    }
+
+    #root {
+        min-height: 100dvh;
+    }
+
+    ::selection {
+        background: var(--color-accent);
+        color: var(--text-on-accent);
+    }
+}
+
+@keyframes kanban-appear {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes kanban-card-appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .kanban-task-overlay {
+        transform: none !important;
+    }
+}

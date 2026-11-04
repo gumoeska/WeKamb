@@ -1,0 +1,209 @@
+@layer components {
+    .app-shell {
+        position: relative;
+        display: flex;
+        min-height: 100dvh;
+        min-width: 0;
+        flex-direction: column;
+        background-image:
+            linear-gradient(var(--grid-line) 1px, transparent 1px),
+            linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+        background-size: 48px 48px;
+        background-position: center 72px;
+    }
+
+    .workspace-header {
+        display: flex;
+        min-height: 72px;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 32px;
+        border-bottom: 1px solid var(--border-subtle);
+        background: var(--surface-page);
+    }
+
+    .workspace-brand {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .brand-mark {
+        display: grid;
+        width: 32px;
+        height: 32px;
+        place-items: center;
+        color: var(--color-accent);
+    }
+
+    .brand-mark svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .workspace-brand h1 {
+        font-family: var(--font-heading);
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+
+    .workspace-brand p {
+        margin-top: 5px;
+        color: var(--color-accent);
+        font-family: var(--font-utility);
+        font-size: 8px;
+        line-height: 1;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+    }
+
+    .workspace-actions {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        gap: 8px;
+        margin-left: auto;
+    }
+
+    .workspace-actions .header-action {
+        height: 38px;
+        gap: 7px;
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--control-radius);
+        padding: 0 12px;
+        color: var(--text-secondary);
+        font-family: var(--font-utility);
+        font-size: 10px;
+        font-weight: 500;
+        transition:
+            color var(--motion-fast) ease,
+            border-color var(--motion-fast) ease;
+    }
+
+    .workspace-actions .header-action:hover {
+        border-color: var(--color-accent);
+        color: var(--color-accent);
+    }
+
+    .workspace-main {
+        width: 100%;
+        min-width: 0;
+        max-width: var(--workspace-width);
+        flex: 1;
+        margin: 0 auto;
+        padding: 52px 24px 64px;
+    }
+
+    .workspace-footer {
+        display: flex;
+        width: 100%;
+        max-width: var(--workspace-width);
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin: 0 auto;
+        padding: 18px 24px;
+        border-top: 1px solid var(--border-subtle);
+        color: var(--text-muted);
+        font-family: var(--font-utility);
+        font-size: 10px;
+        line-height: 1.6;
+    }
+
+    .footer-storage {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+    }
+
+    .footer-storage svg {
+        flex-shrink: 0;
+        color: var(--color-accent);
+    }
+
+    .footer-label {
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    .storage-alert {
+        margin-bottom: 24px;
+        padding: 14px;
+        border: 1px solid var(--color-accent);
+        background: var(--surface-panel);
+        color: var(--text-primary);
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .skip-link {
+        position: fixed;
+        z-index: 100;
+        top: 8px;
+        left: 8px;
+        padding: 12px;
+        background: var(--color-accent);
+        color: var(--text-on-accent);
+        transform: translateY(-150%);
+    }
+
+    .skip-link:focus {
+        transform: translateY(0);
+    }
+}
+
+@layer components {
+    @media (max-width: 639px) {
+        .workspace-header {
+            min-height: 64px;
+            padding: 12px 16px;
+        }
+
+        .brand-mark {
+            width: 28px;
+            height: 28px;
+        }
+
+        .workspace-brand {
+            gap: 8px;
+        }
+
+        .workspace-brand h1 {
+            font-size: 17px;
+        }
+
+        .workspace-brand p {
+            display: none;
+        }
+
+        .workspace-actions .header-action {
+            min-height: 40px;
+            padding: 0 8px;
+        }
+
+        .workspace-actions {
+            gap: 5px;
+        }
+
+        .workspace-main {
+            padding: 32px 16px 40px;
+        }
+
+        .workspace-footer {
+            padding: 16px;
+            font-size: 9px;
+        }
+
+        .footer-label {
+            display: none;
+        }
+    }
+}

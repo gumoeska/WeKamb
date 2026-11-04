@@ -1,0 +1,13 @@
+:root {
+    --font-body: "Plus Jakarta Sans Variable", "Segoe UI", sans-serif;
+    --font-heading: "Rajdhani", "Arial Narrow", sans-serif;
+    --font-utility: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+    --text-body-size: 13px;
+    --text-utility-size: 10px;
+    --workspace-width: 1200px;
+    --column-width: 340px;
+    --column-min-width: 260px;
+    --control-radius: 2px;
+    --motion-fast: 180ms;
+    --motion-enter: 320ms;
+}
